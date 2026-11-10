@@ -24,5 +24,447 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
 
-        
+        header {
+            background: linear-gradient(135deg, #090d16 0%, #161e2e 100%);
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-blue);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        header img {
+            max-width: 240px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        h2.section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+        }
+
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .app-list-item {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .app-list-item:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .list-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .list-info h3 {
+            font-size: 20px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .list-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .app-detail {
+            display: none;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--accent-blue);
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .detail-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 20px var(--accent-glow);
+            margin-bottom: 15px;
+        }
+
+        .detail-header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .meta-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 20px auto;
+            background-color: var(--btn-green);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .download-btn:hover {
+            background-color: var(--btn-green-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+        }
+
+        .content-section {
+            margin-top: 25px;
+        }
+
+        .content-section h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+        }
+
+        .app-description {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .screenshots-grid img {
+            width: 100%;
+            height: 110px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s ease;
+        }
+
+        .screenshots-grid img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-blue);
+        }
+
+        /* Contenedor adaptado para el rectángulo de anuncios 300x250 */
+        .ad-container {
+            text-align: center;
+            margin: 25px auto;
+            padding: 10px;
+            background: rgba(22, 30, 46, 0.5);
+            border-radius: 12px;
+            max-width: 320px;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+    </style>
+
+    <!-- Script de Popunder para apoyo en clics -->
+    <script data-cfasync="false" src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
+</head>
+<body>
+
+    <header>
+        <img src="file_00000000d7d081f5bfd9d0a5e0021d11.png" alt="Impac Gamer Logo">
+    </header>
+
+    <div class="container">
+
+        <!-- VISTA 1: HOME -->
+        <div id="home-view">
+            <h2 class="section-title">Aplicaciones Destacadas</h2>
+            <div class="app-list">
+                <div class="app-list-item" onclick="showApp('org24')">
+                    <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="list-logo">
+                    <div class="list-info">
+                        <h3>ORG 2024 Premium</h3>
+                        <p>Ver: 2024.1.0 • Actualizado ago 2026</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+
+                <div class="app-list-item" onclick="showApp('caustic')">
+                    <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="list-logo">
+                    <div class="list-info">
+                        <h3>Caustic 3 Piano</h3>
+                        <p>Ver: 3.2.0 • Actualizado ago 2026</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rectángulo de Anuncios (300x250) en el Home -->
+            <div class="ad-container">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'd50db05c9aa62c23b68a595bb110e6f2',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
+            </div>
+        </div>
+
+        <!-- VISTA 2: DETALLE ORG 2024 -->
+        <div id="detail-org24" class="app-detail">
+            <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
+            
+            <div class="detail-header">
+                <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="detail-logo">
+                <h1>ORG 2024 Premium</h1>
+                <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
+            </div>
+
+            <!-- Botón con doble temporizador (Anuncio 4s + Enlace 12s) -->
+            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">📥 DESCARGAR APK</button>
+
+            <div class="content-section">
+                <h3>Video Demostración</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/AQu4xNeMSxY" title="ORG 24 Video" allowfullscreen></iframe>
+                </div>
+
+                <h3>Descripción de la Aplicación</h3>
+                <p class="app-description">
+                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de ritmos con calidad de estudio.
+                </p>
+
+                <h3>Capturas de Pantalla e Interfaz</h3>
+                <div class="screenshots-grid">
+                    <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
+                    <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
+                </div>
+            </div>
+        </div>
+
+        <!-- VISTA 3: DETALLE CAUSTIC 3 -->
+        <div id="detail-caustic" class="app-detail">
+            <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
+            
+            <div class="detail-header">
+                <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="detail-logo">
+                <h1>Caustic 3 Piano para Android</h1>
+                <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
+            </div>
+
+            <!-- Botón con doble temporizador (Anuncio 4s + Enlace 12s) -->
+            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">📥 DESCARGAR APK</button>
+
+            <div class="content-section">
+                <h3>Video Demostración</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/OeLdRdvKLm0" title="Caustic 3 Video" allowfullscreen></iframe>
+                </div>
+
+                <h3>Descripción de la Aplicación</h3>
+                <p class="app-description">
+                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks para componer melodías y beats profesionales.
+                </p>
+
+                <h3>Capturas de Pantalla e Interfaz</h3>
+                <div class="screenshots-grid">
+                    <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg" alt="Caustic 3 Captura 1">
+                    <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg" alt="Caustic 3 Captura 2">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showApp(app) {
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('detail-org24').style.display = 'none';
+            document.getElementById('detail-caustic').style.display = 'none';
+
+            if (app === 'org24') {
+                document.getElementById('detail-org24').style.display = 'block';
+            } else if (app === 'caustic') {
+                document.getElementById('detail-caustic').style.display = 'block';
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('detail-org24').style.display = 'none';
+            document.getElementById('detail-caustic').style.display = 'none';
+            document.getElementById('home-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Sistema de Doble Temporizador (Anuncio de 4s + 12s de enlace)
+        function startDownload(apkFileName, buttonId) {
+            const btn = document.getElementById(buttonId);
+            
+            if (btn.dataset.ready === "true") {
+                const a = document.createElement('a');
+                a.href = apkFileName;
+                a.download = apkFileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                return;
+            }
+
+            btn.disabled = true;
+
+            // Fase 1: Espera de 4 segundos para el anuncio
+            let adTimeLeft = 4;
+            btn.innerHTML = `⏳ Verificando anuncio... (${adTimeLeft}s)`;
+
+            const adTimer = setInterval(() => {
+                adTimeLeft--;
+                if (adTimeLeft > 0) {
+                    btn.innerHTML = `⏳ Verificando anuncio... (${adTimeLeft}s)`;
+                } else {
+                    clearInterval(adTimer);
+                    
+                    // Fase 2: Cuenta regresiva exacta de 12 segundos para el enlace
+                    let linkTimeLeft = 12;
+                    btn.innerHTML = `⏳ Espera ${linkTimeLeft} segundos, preparando tu enlace...`;
+
+                    const linkTimer = setInterval(() => {
+                        linkTimeLeft--;
+                        if (linkTimeLeft >= 0) {
+                            btn.innerHTML = `⏳ Espera ${linkTimeLeft} segundos, preparando tu enlace...`;
+                        } else {
+                            clearInterval(linkTimer);
+                            btn.disabled = false;
+                            btn.innerHTML = "📥 ¡ENLACE LISTO! CLIC AQUÍ PARA DESCARGAR";
+                            btn.style.backgroundColor = "#eab308"; // Amarillo de listo
+                            btn.dataset.ready = "true";
+                        }
+                    }, 1000);
+                }
+            }, 1000);
+        }
+    </script>
+
+</body>
+                        </html>
+                        
