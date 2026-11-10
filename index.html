@@ -43,5 +43,38 @@
             max-width: 240px;
             width: 100%;
             height: auto;
-            filter:
-                
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 25px auto;
+            padding: 0 15px;
+        }
+
+        h2.section-title {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 10px;
+        }
+
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .app-list-item {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            
