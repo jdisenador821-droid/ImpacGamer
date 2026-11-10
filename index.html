@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Impac Gamer - Tienda de Aplicaciones APK</title>
+    
+    <!-- Script de Popunder -->
+    <script data-cfasync="false" src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
+
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -277,7 +281,7 @@
             max-width: 320px;
         }
 
-        /* Sección de Redes Sociales (TikTok, Instagram, YouTube) */
+        /* Estilo para los botones con tus imágenes de redes sociales */
         .social-section {
             text-align: center;
             margin: 35px auto 15px auto;
@@ -304,17 +308,15 @@
         }
 
         .social-logo-btn {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
+            display: inline-block;
             width: 55px;
             height: 55px;
             border-radius: 50%;
-            background-color: #000000;
+            overflow: hidden;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
             border: 2px solid rgba(255, 255, 255, 0.2);
-            text-decoration: none;
+            background: #000;
         }
 
         .social-logo-btn:hover {
@@ -323,10 +325,10 @@
             border-color: var(--accent-blue);
         }
 
-        .social-logo-btn svg {
-            width: 26px;
-            height: 26px;
-            fill: #ffffff;
+        .social-logo-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -364,9 +366,6 @@
             padding-top: 20px;
         }
     </style>
-
-    <!-- Script de Popunder -->
-    <script data-cfasync="false" src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
 </head>
 <body>
 
@@ -480,12 +479,100 @@
 
     </div>
 
-    <!-- SECCIÓN DE REDES OFICIALES Y TÉRMINOS -->
+    <!-- SECCIÓN DE TUS REDES SOCIALES CON TUS PROPIAS IMÁGENES -->
     <div class="social-section">
         <h3>¡Sígueme en mis redes oficiales!</h3>
         <div class="social-icons">
-            <!-- TIKTOK -->
+            <!-- TIKTOK (Usa tu imagen 14615_2.png) -->
             <a href="https://www.tiktok.com/@kaitochivas?_r=1&_t=ZS-9BI27UBAXLC" target="_blank" class="social-logo-btn" title="TikTok">
-                <svg viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.8
-    
+                <img src="14615_2.png" alt="TikTok">
+            </a>
+            <!-- INSTAGRAM (Usa tu imagen 14613_2.png) -->
+            <a href="https://www.instagram.com/its.jezu?obrf=MWZnYm81bGhjcXp1NA==" target="_blank" class="social-logo-btn" title="Instagram">
+                <img src="14613_2.png" alt="Instagram">
+            </a>
+            <!-- YOUTUBE (Usa tu imagen 14616_2.png) -->
+            <a href="https://youtube.com/@impacgamer?si=YR2oX-A-3a6bZ80a" target="_blank" class="social-logo-btn" title="YouTube">
+                <img src="14616_2.png" alt="YouTube">
+            </a>
+        </div>
+        <span class="terms-link" onclick="toggleTerms()">Términos y Condiciones</span>
+        <div id="terms-box">
+            Las aplicaciones compartidas en este sitio son recopilaciones con fines educativos y de entretenimiento. Impac Gamer no almacena archivos maliciosos; sin embargo, el usuario descarga y utiliza los APKs bajo su propia responsabilidad.
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showApp(app) {
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('detail-org24').style.display = 'none';
+            document.getElementById('detail-caustic').style.display = 'none';
+
+            if (app === 'org24') {
+                document.getElementById('detail-org24').style.display = 'block';
+            } else if (app === 'caustic') {
+                document.getElementById('detail-caustic').style.display = 'block';
+            }
+            window.scrollTo(0, 0);
+        }
+
+        function showHome() {
+            document.getElementById('detail-org24').style.display = 'none';
+            document.getElementById('detail-caustic').style.display = 'none';
+            document.getElementById('home-view').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // Sistema de Doble Verificación y Temporizador Moderno de 10 Segundos
+        function startDownload(apkFileName, buttonId) {
+            const btn = document.getElementById(buttonId);
+            
+            if (btn.dataset.ready === "true") {
+                const a = document.createElement('a');
+                a.href = apkFileName;
+                a.download = apkFileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                return;
+            }
+
+            btn.disabled = true;
+
+            // FASE 1: Verificación de anuncios inicial (4 segundos)
+            let adWait = 4;
+            btn.innerHTML = `🛡️ Verificando anuncios... (${adWait}s)`;
+
+            const adInterval = setInterval(() => {
+                adWait--;
+                if (adWait > 0) {
+                    btn.innerHTML = `🛡️ Verificando anuncios... (${adWait}s)`;
+                } else {
+                    clearInterval(adInterval);
+                    
+                    // FASE 2: Cuenta regresiva sofisticada de 10 segundos
+                    let timerLeft = 10;
+                    btn.innerHTML = `⏳ Espera ${timerLeft} segundos para tu recompensa...`;
+
+                    const countInterval = setInterval(() => {
+                        timerLeft--;
+                        if (timerLeft >= 0) {
+                            btn.innerHTML = `⏳ Espera ${timerLeft} segundos para tu recompensa...`;
+                        } else {
+                            clearInterval(countInterval);
+                            btn.disabled = false;
+                            btn.innerHTML = "📥 ¡RECOMPENSA LISTA! CLIC AQUÍ";
+                            btn.style.background = "var(--btn-ready)";
+                            btn.style.boxShadow = "0 6px 20px rgba(234, 179, 8, 0.4)";
+                            btn.dataset.ready = "true";
+                        }
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        funct
