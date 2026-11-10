@@ -175,7 +175,7 @@
             display: block;
             width: 100%;
             max-width: 320px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 20px auto;
             background-color: var(--btn-green);
             color: white;
             padding: 15px 25px;
@@ -259,7 +259,7 @@
 
         .ad-container {
             text-align: center;
-            margin: 30px 0;
+            margin: 20px 0;
             padding: 10px;
             background: rgba(22, 30, 46, 0.5);
             border-radius: 12px;
@@ -331,10 +331,7 @@
                 <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
             </div>
 
-            <!-- Botón con temporizador para ORG 24 -->
-            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">📥 DESCARGAR APK</button>
-
-            <!-- Banner Adsterra justo arriba de la zona de descarga/video para que lo vean -->
+            <!-- Banner Adsterra visible arriba del botón de descarga -->
             <div class="ad-container">
                 <script type="text/javascript">
                     atOptions = {
@@ -347,6 +344,9 @@
                 </script>
                 <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
             </div>
+
+            <!-- Botón con temporizador exacto de 12 segundos -->
+            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">📥 DESCARGAR APK</button>
 
             <div class="content-section">
                 <h3>Video Demostración</h3>
@@ -377,10 +377,7 @@
                 <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
             </div>
 
-            <!-- Botón con temporizador para Caustic 3 -->
-            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">📥 DESCARGAR APK</button>
-
-            <!-- Banner Adsterra en Caustic 3 -->
+            <!-- Banner Adsterra visible arriba del botón de descarga -->
             <div class="ad-container">
                 <script type="text/javascript">
                     atOptions = {
@@ -393,6 +390,9 @@
                 </script>
                 <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
             </div>
+
+            <!-- Botón con temporizador exacto de 12 segundos -->
+            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">📥 DESCARGAR APK</button>
 
             <div class="content-section">
                 <h3>Video Demostración</h3>
@@ -420,6 +420,7 @@
     </footer>
 
     <script>
+        // Función para cambiar de vista limpiamente sin abrir pestañas de código
         function showApp(app) {
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('detail-org24').style.display = 'none';
@@ -440,7 +441,7 @@
             window.scrollTo(0, 0);
         }
 
-        // Sistema de Temporizador limpio sin errores de texto
+        // Sistema de Temporizador exacto de 12 segundos y mensaje de espera
         function startDownload(apkFileName, buttonId) {
             const btn = document.getElementById(buttonId);
             
@@ -454,9 +455,9 @@
                 return;
             }
 
-            // Desactiva el botón y arranca la cuenta regresiva de 10 segundos
+            // Desactiva el botón y arranca la cuenta regresiva de 12 segundos exactos
             btn.disabled = true;
-            let timeLeft = 10;
+            let timeLeft = 12;
             
             const timer = setInterval(() => {
                 btn.innerHTML = `⏳ Espera ${timeLeft} segundos, preparando tu enlace...`;
@@ -474,4 +475,5 @@
     </script>
 
 </body>
-</html>
+    </html>
+    
