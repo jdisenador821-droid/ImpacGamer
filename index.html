@@ -77,4 +77,90 @@
             transition: all 0.25s ease;
             border: 1px solid rgba(56, 189, 248, 0.15);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .app-list-item:hover {
+            background-color: var(--card-hover);
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .list-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .list-info h3 {
+            font-size: 20px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .list-info p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .stars {
+            color: #f59e0b;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        .app-detail {
+            display: none;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            color: var(--accent-blue);
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        .detail-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .detail-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            box-shadow: 0 0 20px var(--accent-glow);
+            margin-bottom: 15px;
+        }
+
+        .detail-header h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .meta-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
             
