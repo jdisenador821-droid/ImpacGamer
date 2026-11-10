@@ -60,7 +60,6 @@
             padding-left: 10px;
         }
 
-        /* VISTA DE LISTA (HOME TIENDA) */
         .app-list {
             display: flex;
             flex-direction: column;
@@ -113,7 +112,6 @@
             letter-spacing: 2px;
         }
 
-        /* VISTA DE DETALLE DE CADA APP */
         .app-detail {
             display: none;
             background-color: var(--card-bg);
@@ -173,6 +171,7 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
+        /* BOTÓN DE DESCARGA INTERACTIVO */
         .download-btn {
             display: block;
             width: 100%;
@@ -184,10 +183,12 @@
             border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 17px;
+            font-size: 16px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
             transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .download-btn:hover {
@@ -257,6 +258,14 @@
             border-color: var(--accent-blue);
         }
 
+        .ad-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 10px;
+            background: rgba(22, 30, 46, 0.5);
+            border-radius: 12px;
+        }
+
         footer {
             text-align: center;
             color: var(--text-muted);
@@ -275,14 +284,12 @@
 
     <div class="container">
 
-        <!-- ===== VISTA 1: LISTA PRINCIPAL (ESTILO ESPACIO APK) ===== -->
+        <!-- VISTA 1: HOME -->
         <div id="home-view">
             <h2 class="section-title">Aplicaciones Destacadas</h2>
             <div class="app-list">
-
-                <!-- Tarjeta 1: ORG 2024 Premium -->
                 <div class="app-list-item" onclick="showApp('org24')">
-                    <img src="File_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="list-logo">
+                    <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="list-logo">
                     <div class="list-info">
                         <h3>ORG 2024 Premium</h3>
                         <p>Ver: 2024.1.0 • Actualizado ago 2026</p>
@@ -290,7 +297,6 @@
                     </div>
                 </div>
 
-                <!-- Tarjeta 2: Caustic 3 Piano -->
                 <div class="app-list-item" onclick="showApp('caustic')">
                     <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="list-logo">
                     <div class="list-info">
@@ -299,21 +305,35 @@
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
+            </div>
 
+            <!-- Banner Adsterra Principal -->
+            <div class="ad-container">
+                <script type="text/javascript">
+                    atOptions = {
+                        'key' : 'd50db05c9aa62c23b68a595bb110e6f2',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                    };
+                </script>
+                <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
             </div>
         </div>
 
-        <!-- ===== VISTA 2: DETALLE ORG 2024 PREMIUM ===== -->
+        <!-- VISTA 2: DETALLE ORG 2024 -->
         <div id="detail-org24" class="app-detail">
             <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
             
             <div class="detail-header">
-                <img src="File_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="detail-logo">
+                <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="detail-logo">
                 <h1>ORG 2024 Premium</h1>
                 <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
             </div>
 
-            <a href="ORG 24 ImPacGG-1.apk" class="download-btn" download>📥 DESCARGAR APK</a>
+            <!-- Botón con temporizador y anuncios para ORG 24 -->
+            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">📥 DESCARGAR APK</button>
 
             <div class="content-section">
                 <h3>Video Demostración</h3>
@@ -323,31 +343,29 @@
 
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
-                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) no es solo una aplicación, es la herramienta definitiva forjada para los creadores de ritmos y músicos que buscan romper las reglas. Esta versión desbloqueada te da el poder absoluto sobre una colección infinita de ritmos (Pop, Jazz, Rock, Hindi) con calidad de estudio directamente en tu dispositivo Android. En la interfaz principal, el sistema despliega las cuatro categorías clave: <em>Main, Slider, Effect, Live Style y Drum</em>. Elige libremente instrumentos legendarios como Piano, Guitarra, Violín, Sitar, Saxofón y baterías personalizadas. ¡Graba tus propias obras maestras y domina los escenarios virtuales!
+                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de ritmos con calidad de estudio.
                 </p>
 
                 <h3>Capturas de Pantalla e Interfaz</h3>
                 <div class="screenshots-grid">
                     <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
                     <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
-                    <img src="35dfb6fd5282844faa60feafdb4ca8413f2c43463fd6d801d6322af71cd9ab73_800.jpeg" alt="ORG 24 Captura 3">
-                    <img src="998e3f1790376f883c5f3ad1629f1c993972344e80e66dd6cdbc0dde9fa1c702_300.jpeg" alt="ORG 24 Captura 4">
-                    <img src="3dc899e45a66b1ae3d21a44cf1f05db3b5ba13e99d57c30de7b0d359e7eb8c51_300.jpeg" alt="ORG 24 Captura 5">
                 </div>
             </div>
         </div>
 
-        <!-- ===== VISTA 3: DETALLE CAUSTIC 3 PIANO ===== -->
+        <!-- VISTA 3: DETALLE CAUSTIC 3 -->
         <div id="detail-caustic" class="app-detail">
             <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
             
             <div class="detail-header">
                 <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="detail-logo">
                 <h1>Caustic 3 Piano para Android</h1>
-                <div class="meta-badge">Versión: 3.2.0 • Música y Audio (Single Cell Software)</div>
+                <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
             </div>
 
-            <a href="com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk" class="download-btn" download>📥 DESCARGAR APK</a>
+            <!-- Botón con temporizador y anuncios para Caustic 3 -->
+            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">📥 DESCARGAR APK</button>
 
             <div class="content-section">
                 <h3>Video Demostración</h3>
@@ -357,15 +375,13 @@
 
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
-                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks. Ubicado en la categoría de Música y Audio, cuenta con una calificación excepcional avalada por miles de usuarios activos en todo el mundo. Desarrollado por Single Cell Software, te permite conectar diferentes máquinas virtuales (sintetizadores, cajas de ritmos, vocoders y mesas de mezclas) en una misma sesión para crear complejos patrones musicales y beats profesionales directamente en tu Android. Ya sea componiendo melodías en su teclado virtual o estructurando percusiones avanzadas, es una aplicación esencial para cualquier productor móvil.
+                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks para componer melodías y beats profesionales.
                 </p>
 
                 <h3>Capturas de Pantalla e Interfaz</h3>
                 <div class="screenshots-grid">
                     <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg" alt="Caustic 3 Captura 1">
                     <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg" alt="Caustic 3 Captura 2">
-                    <img src="IMG_ff5786da-84a3-4ba1-8bb7-09196dc4630b.jpg" alt="Caustic 3 Captura 3">
-                    <img src="IMG_858c1e51-12ce-4ffd-9784-113aca444c34.jpg" alt="Caustic 3 Captura 4">
                 </div>
             </div>
         </div>
@@ -377,7 +393,11 @@
     </footer>
 
     <script>
+        // Función para abrir la app y simular anuncio de apertura (abre una pestaña de publicidad de Adsterra o enlace directo)
         function showApp(app) {
+            // Disparar anuncio al abrir detalle de la aplicación (Enlace directo o Pop-under de Adsterra si lo tienes)
+            window.open('https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2', '_blank');
+
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('detail-org24').style.display = 'none';
             document.getElementById('detail-caustic').style.display = 'none';
@@ -395,6 +415,42 @@
             document.getElementById('detail-caustic').style.display = 'none';
             document.getElementById('home-view').style.display = 'block';
             window.scrollTo(0, 0);
+        }
+
+        // Sistema de Temporizador y Anuncios para la Descarga
+        function startDownload(apkFileName, buttonId) {
+            const btn = document.getElementById(buttonId);
+            
+            // Si el botón ya está listo para descargar, ejecuta la descarga directa
+            if (btn.dataset.ready === "true") {
+                const a = document.createElement('a');
+                a.href = apkFileName;
+                a.download = apkFileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                return;
+            }
+
+            // 1. Al hacer clic, abre un anuncio en otra pestaña (simulando los anuncios requeridos)
+            window.open('https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2', '_blank');
+
+            // 2. Desactiva el botón y arranca la cuenta regresiva de 10 segundos
+            btn.disabled = true;
+            let timeLeft = 10;
+            
+            const timer = setInterval(() => {
+                btn.innerHTML = `⏳ Espera ${timeLeft} segundos...`;
+                timeLeft--;
+
+                if (timeLeft < 0) {
+                    clearInterval(timer);
+                    btn.disabled = false;
+                    btn.innerHTML = "📥 ¡ENLACE LISTO! CLIC AQUÍ PARA DESCARGAR";
+                    btn.style.backgroundColor = "#eab308"; // Color amarillo de listo
+                    btn.dataset.ready = "true"; // Marca el botón como listo para el siguiente toque
+                }
+            }, 1000);
         }
     </script>
 
