@@ -44,7 +44,7 @@
             max-width: 240px;
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 10px var(--accent-glow));
+            filter: drop-shadow(0 0 8px var(--accent-glow));
         }
 
         .container {
@@ -82,5 +82,24 @@
 
         .app-list-item:hover {
             background-color: var(--card-hover);
-            transform: translateY
-            
+            transform: translateY(-2px);
+            border-color: var(--accent-blue);
+        }
+
+        .list-logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            object-fit: cover;
+            border: 2px solid var(--accent-blue);
+            flex-shrink: 0;
+        }
+
+        .list-info h3 {
+            font-size: 20px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+
+        
