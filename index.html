@@ -277,6 +277,84 @@
             max-width: 320px;
         }
 
+        /* Sección de Redes Sociales (TikTok, Instagram, YouTube) */
+        .social-section {
+            text-align: center;
+            margin: 35px auto 15px auto;
+            padding: 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            max-width: 800px;
+        }
+
+        .social-section h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+
+        .social-logo-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #000000;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            text-decoration: none;
+        }
+
+        .social-logo-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 18px var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .social-logo-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: #ffffff;
+            display: block;
+        }
+
+        .terms-link {
+            display: inline-block;
+            color: var(--text-muted);
+            font-size: 13px;
+            text-decoration: underline;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        .terms-link:hover {
+            color: var(--accent-blue);
+        }
+
+        #terms-box {
+            display: none;
+            background: rgba(22, 30, 46, 0.95);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
         footer {
             text-align: center;
             color: var(--text-muted);
@@ -402,80 +480,12 @@
 
     </div>
 
-    <footer>
-        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
-    </footer>
-
-    <script>
-        function showApp(app) {
-            document.getElementById('home-view').style.display = 'none';
-            document.getElementById('detail-org24').style.display = 'none';
-            document.getElementById('detail-caustic').style.display = 'none';
-
-            if (app === 'org24') {
-                document.getElementById('detail-org24').style.display = 'block';
-            } else if (app === 'caustic') {
-                document.getElementById('detail-caustic').style.display = 'block';
-            }
-            window.scrollTo(0, 0);
-        }
-
-        function showHome() {
-            document.getElementById('detail-org24').style.display = 'none';
-            document.getElementById('detail-caustic').style.display = 'none';
-            document.getElementById('home-view').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        // Sistema de Doble Verificación y Temporizador Moderno de 10 Segundos
-        function startDownload(apkFileName, buttonId) {
-            const btn = document.getElementById(buttonId);
-            
-            if (btn.dataset.ready === "true") {
-                const a = document.createElement('a');
-                a.href = apkFileName;
-                a.download = apkFileName;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                return;
-            }
-
-            btn.disabled = true;
-
-            // FASE 1: Verificación de anuncios inicial (4 segundos)
-            let adWait = 4;
-            btn.innerHTML = `🛡️ Verificando anuncios... (${adWait}s)`;
-
-            const adInterval = setInterval(() => {
-                adWait--;
-                if (adWait > 0) {
-                    btn.innerHTML = `🛡️ Verificando anuncios... (${adWait}s)`;
-                } else {
-                    clearInterval(adInterval);
-                    
-                    // FASE 2: Cuenta regresiva sofisticada de 10 segundos
-                    let timerLeft = 10;
-                    btn.innerHTML = `⏳ Espera ${timerLeft} segundos para tu recompensa...`;
-
-                    const countInterval = setInterval(() => {
-                        timerLeft--;
-                        if (timerLeft >= 0) {
-                            btn.innerHTML = `⏳ Espera ${timerLeft} segundos para tu recompensa...`;
-                        } else {
-                            clearInterval(countInterval);
-                            btn.disabled = false;
-                            btn.innerHTML = "📥 ¡RECOMPENSA LISTA! CLIC AQUÍ";
-                            btn.style.background = "var(--btn-ready)";
-                            btn.style.boxShadow = "0 6px 20px rgba(234, 179, 8, 0.4)";
-                            btn.dataset.ready = "true";
-                        }
-                    }, 1000);
-                }
-            }, 1000);
-        }
-    </script>
-
-</body>
-    </html>
+    <!-- SECCIÓN DE REDES OFICIALES Y TÉRMINOS -->
+    <div class="social-section">
+        <h3>¡Sígueme en mis redes oficiales!</h3>
+        <div class="social-icons">
+            <!-- TIKTOK -->
+            <a href="https://www.tiktok.com/@kaitochivas?_r=1&_t=ZS-9BI27UBAXLC" target="_blank" class="social-logo-btn" title="TikTok">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.8
     
