@@ -10,12 +10,11 @@
             --card-bg: #161e2e;
             --card-hover: #1f2a40;
             --accent-blue: #38bdf8;
-            --accent-glow: rgba(56, 189, 248, 0.4);
+            --accent-glow: rgba(56, 189, 248, 0.3);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --btn-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-            --btn-hover-gradient: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-            --btn-ready: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+            --btn-green: #22c55e;
+            --btn-green-hover: #16a34a;
         }
 
         * {
@@ -23,82 +22,6 @@
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding-bottom: 50px;
-        }
-
-        header {
-            background: linear-gradient(135deg, #090d16 0%, #161e2e 100%);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid var(--accent-blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-        }
-
-        header img {
-            max-width: 240px;
-            width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 8px var(--accent-glow));
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 25px auto;
-            padding: 0 15px;
-        }
-
-        h2.section-title {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: var(--text-main);
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 10px;
-        }
-
-        .app-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .app-list-item {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 18px 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .app-list-item:hover {
-            background-color: var(--card-hover);
-            transform: translateY(-2px);
-            border-color: var(--accent-blue);
-        }
-
-        .list-logo {
-            width: 70px;
-            height: 70px;
-            border-radius: 14px;
-            object-fit: cover;
-            border: 2px solid var(--accent-blue);
-            flex-shrink: 0;
-        }
-
-        .list-info h3 {
-            font-size: 20px;
-            color: var(--text-main);
-            margin-bottom: 4px;
         }
 
 
