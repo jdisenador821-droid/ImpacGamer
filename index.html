@@ -561,6 +561,7 @@
 </div>
 
 <script>
+    // ESTA ES LA FUNCIÓN ORIGINAL LIMPIA QUE DEJA PASAR EL CAPTCHA AL INSTANTE
     function onCaptchaSuccess(token) {
         if (token) {
             document.getElementById('captcha-gate').style.display = 'none';
@@ -573,7 +574,6 @@
         document.getElementById('detail-org24').style.display = 'none';
         document.getElementById('detail-caustic').style.display = 'none';
         
-        // Resetear botones y avisos al cambiar de app
         resetButton('btn-org24', 'notice-org24', '🔗 GENERAR ENLACE APK');
         resetButton('btn-caustic', 'notice-caustic', '🔗 GENERAR ENLACE APK');
 
@@ -595,6 +595,5 @@
     function resetButton(btnId, noticeId, defaultText) {
         const btn = document.getElementById(btnId);
         const notice = document.getElementById(noticeId);
-        btn.disabled = false;
-        btn.innerText = defaultText;
-      
+        if(!btn) return;
+        btn.disabled = 
