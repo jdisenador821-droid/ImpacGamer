@@ -51,7 +51,7 @@
             width: 100%;
             max-width: 380px;
             background: #161e2e;
-            border: none !important;
+            border: none !important; /* Líneas del cuadro eliminadas */
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
@@ -220,28 +220,11 @@
             border: 1px solid rgba(56, 189, 248, 0.3);
         }
 
-        /* ESTILOS PARA LA ZONA DE DESCARGA Y TEMPORIZADOR */
-        .download-zone {
-            text-align: center;
-            margin-bottom: 25px;
-            background: rgba(11, 15, 25, 0.4);
-            padding: 20px;
-            border-radius: 16px;
-            border: 1px dashed rgba(56, 189, 248, 0.3);
-        }
-
-        .download-timer-box {
-            font-size: 15px;
-            color: var(--accent-blue);
-            font-weight: 600;
-            margin-bottom: 12px;
-            min-height: 24px;
-        }
-
         .download-btn {
-            display: inline-block;
+            display: block;
             width: 100%;
             max-width: 360px;
+            margin: 0 auto 25px auto;
             background: var(--btn-gradient);
             color: white;
             padding: 16px 25px;
@@ -263,14 +246,6 @@
             box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
         }
 
-        .download-btn:disabled {
-            background: #475569;
-            cursor: not-allowed;
-            box-shadow: none;
-            transform: none;
-            opacity: 0.7;
-        }
-
         .content-section {
             margin-top: 25px;
         }
@@ -288,52 +263,6 @@
             font-size: 15px;
             margin-bottom: 25px;
             text-align: justify;
-            line-height: 1.7;
-        }
-
-        /* CARRUSEL HORIZONTAL DESLIZABLE (VIDEO E IMÁGENES) */
-        .media-carousel {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-blue) rgba(255,255,255,0.05);
-        }
-
-        .media-carousel::-webkit-scrollbar {
-            height: 8px;
-        }
-
-        .media-carousel::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.05);
-            border-radius: 4px;
-        }
-
-        .media-carousel::-webkit-scrollbar-thumb {
-            background: var(--accent-blue);
-            border-radius: 4px;
-        }
-
-        .media-item {
-            flex: 0 0 85%;
-            max-width: 320px;
-            scroll-snap-align: start;
-            background: #0b0f19;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .media-item.video-wrapper {
-            flex: 0 0 100%;
-            max-width: 100%;
         }
 
         .video-container {
@@ -341,7 +270,11 @@
             width: 100%;
             padding-bottom: 56.25%;
             height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
             background: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         .video-container iframe {
@@ -353,49 +286,25 @@
             border: 0;
         }
 
-        .media-item img {
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .screenshots-grid img {
             width: 100%;
-            height: 200px;
+            height: 110px;
             object-fit: cover;
-            display: block;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: transform 0.2s ease;
         }
 
-        /* SECCIÓN DE COMENTARIOS Y RESEÑAS */
-        .reviews-section {
-            margin-top: 35px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-        }
-
-        .review-card {
-            background: rgba(11, 15, 25, 0.6);
-            border: 1px solid rgba(56, 189, 248, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-
-        .review-author {
-            font-weight: 600;
-            color: var(--text-main);
-            font-size: 14px;
-        }
-
-        .review-stars {
-            color: #f59e0b;
-            font-size: 12px;
-        }
-
-        .review-text {
-            color: var(--text-muted);
-            font-size: 14px;
+        .screenshots-grid img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-blue);
         }
 
         .ad-container {
@@ -471,6 +380,7 @@
         <p>Completa la verificación para entrar a nuestra página.</p>
 
         <div class="captcha-widget">
+            <!-- Se agregó el data-callback para que pase automáticamente al completarse -->
             <div class="g-recaptcha"
                  data-sitekey="6LdsjRouAAAAACiLjXP1Tysegc3ypPBy6LoQk1Xw"
                  data-callback="onCaptchaSuccess">
@@ -481,7 +391,7 @@
     </div>
 </div>
 
-<!-- CONTENIDO DE LA PÁGINA -->
+<!-- TODO EL CONTENIDO DE LA PÁGINA -->
 <div id="site-content" style="display:none;">
 
     <header>
@@ -500,7 +410,7 @@
                     <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="list-logo">
                     <div class="list-info">
                         <h3>ORG 2024 Premium</h3>
-                        <p>Ver: 2024.1.0 • Actualizado nov 2026</p>
+                        <p>Ver: 2024.1.0 • Actualizado ago 2026</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
@@ -509,7 +419,7 @@
                     <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="list-logo">
                     <div class="list-info">
                         <h3>Caustic 3 Piano</h3>
-                        <p>Ver: 3.2.0 • Actualizado nov 2026</p>
+                        <p>Ver: 3.2.0 • Actualizado ago 2026</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
@@ -541,55 +451,25 @@
                 <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
             </div>
 
-            <!-- ZONA DE DESCARGA CON TEMPORIZADOR INTEGRADO -->
-            <div class="download-zone">
-                <div id="timer-org24" class="download-timer-box">⏱️ Preparando enlace de descarga seguro...</div>
-                <button id="btn-org24" class="download-btn" disabled onclick="executeDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">
-                    ⏳ Espera un momento...
-                </button>
-            </div>
+            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">
+                🚀 GENERAR ENLACE APK
+            </button>
 
             <div class="content-section">
-                <h3>Descripción de la Aplicación</h3>
-                <p class="app-description">
-                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada, optimizada y curada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de instrumentos virtuales, ritmos con calidad de estudio y opciones avanzadas de mezcla en tiempo real. Diseñada específicamente para músicos, tecladistas y creadores de contenido que buscan un sonido profesional directamente desde su teléfono Android, esta versión desbloquea todo su potencial para que puedas interpretar cumbias, norteñas y pistas de cualquier género sin restricciones de latencia ni funciones bloqueadas.
-                </p>
-
-                <h3>Video Demostración y Capturas</h3>
-                <!-- CARRUSEL DESLIZABLE HORIZONTAL -->
-                <div class="media-carousel">
-                    <div class="media-item video-wrapper">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/AQu4xNeMSxY" title="ORG 24 Video" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="media-item">
-                        <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
-                    </div>
-                    <div class="media-item">
-                        <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
-                    </div>
+                <h3>Video Demostración</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/AQu4xNeMSxY" title="ORG 24 Video" allowfullscreen></iframe>
                 </div>
 
-                <!-- SECCIÓN DE COMENTARIOS Y RESEÑAS -->
-                <div class="reviews-section">
-                    <h3>Opiniones de la Comunidad</h3>
-                    
-                    <div class="review-card">
-                        <div class="review-header">
-                            <span class="review-author">DJ Alexis Beats</span>
-                            <span class="review-stars">★★★★★</span>
-                        </div>
-                        <p class="review-text">¡La mejor versión que he probado! Los ritmos de cumbia suenan increíblemente bien en mi teclado MIDI conectado al cel. 100% recomendado por Impac Gamer.</p>
-                    </div>
+                <h3>Descripción de la Aplicación</h3>
+                <p class="app-description">
+                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de ritmos con calidad de estudio.
+                </p>
 
-                    <div class="review-card">
-                        <div class="review-header">
-                            <span class="review-author">Carlos R.</span>
-                            <span class="review-stars">★★★★★</span>
-                        </div>
-                        <p class="review-text">Excelente aporte, la descarga funcionó a la primera y sin ningún problema de virus ni anuncios molestos pesados. ¡Saludos desde México!</p>
-                    </div>
+                <h3>Capturas de Pantalla e Interfaz</h3>
+                <div class="screenshots-grid">
+                    <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
+                    <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
                 </div>
             </div>
         </div>
@@ -604,15 +484,117 @@
                 <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
             </div>
 
-            <!-- ZONA DE DESCARGA CON TEMPORIZADOR INTEGRADO -->
-            <div class="download-zone">
-                <div id="timer-caustic" class="download-timer-box">⏱️ Preparando enlace de descarga seguro...</div>
-                <button id="btn-caustic" class="download-btn" disabled onclick="executeDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">
-                    ⏳ Espera un momento...
-                </button>
-            </div>
+            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">
+                🚀 GENERAR ENLACE APK
+            </button>
 
             <div class="content-section">
+                <h3>Video Demostración</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/OeLdRdvKLm0" title="Caustic 3 Video" allowfullscreen></iframe>
+                </div>
+
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
-                    <strong>Caustic 3</strong> es una potente estación de trabajo de audio digital (DAW) inspirada en equipos de síntesis basados en racks virtuales, diseñada especialmen
+                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks para componer melodías y beats profesionales.
+                </p>
+
+                <h3>Capturas de Pantalla e Interfaz</h3>
+                <div class="screenshots-grid">
+                    <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg" alt="Caustic 3 Captura 1">
+                    <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg" alt="Caustic 3 Captura 2">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <!-- REDES SOCIALES -->
+        <div class="social-links">
+            <a class="social-icon" href="https://www.instagram.com/its.jezu?dlrf=MWZnYm81bGhjcXp1NA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="white" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/>
+                    <circle cx="17.5" cy="6.5" r="1.2"/>
+                </svg>
+            </a>
+
+            <a class="social-icon" href="https://youtube.com/@impacgamer?si=5mX_XICqvG3gQ6Wi" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8ZM9.5 15.5v-7l6 3.5-6 3.5Z"/>
+                </svg>
+            </a>
+
+            <a class="social-icon" href="https://www.tiktok.com/@kaitochivas?_r=1&_t=ZS-9BIQg7aoRkq" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg viewBox="0 0 24 24">
+                    <path d="M19.6 8.2a7.3 7.3 0 0 1-4.4-1.5v8.1a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.4a2.9 2.9 0 1 0 1.6 2.6V2h3.4a7.3 7.3 0 0 0 4.4 4.4v1.8Z"/>
+                </svg>
+            </a>
+        </div>
+
+        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- PUBLICIDAD ADSTERRA -->
+    <div class="ad-container">
+        <script async="async" data-cfasync="false" src="https://bellnewyork.org/21/3b565a8529d684b4fccaec369c71d13c"></script>
+        <div id="container-3b565a8529d684b4fccaec369c71d13c"></div>
+    </div>
+
+    <!-- SMARTLINK -->
+    <div class="smartlink-container">
+        <a href="https://ardance.org/4/78a33622a225fa9aec39d6320f91b836" target="_blank" rel="nofollow sponsored noopener noreferrer">
+            Enlace publicitario
+        </a>
+    </div>
+
+    <!-- SOCIAL BAR -->
+    <script data-cfasync="false" src="https://bellnewyork.org/14/af18da111ebd1ee49a4463e035040ed1"></script>
+
+</div>
+<!-- FIN DEL CONTENIDO DE LA PÁGINA -->
+
+<script>
+    // Función que se ejecuta automáticamente al completar el reCAPTCHA
+    function onCaptchaSuccess(token) {
+        if (token) {
+            document.getElementById('captcha-gate').style.display = 'none';
+            document.getElementById('site-content').style.display = 'block';
+        }
+    }
+
+    function showApp(appId) {
+        document.getElementById('home-view').style.display = 'none';
+        document.getElementById('detail-org24').style.display = 'none';
+        document.getElementById('detail-caustic').style.display = 'none';
+        
+        if(appId === 'org24') {
+            document.getElementById('detail-org24').style.display = 'block';
+        } else if(appId === 'caustic') {
+            document.getElementById('detail-caustic').style.display = 'block';
+        }
+        window.scrollTo(0, 0);
+    }
+
+    function showHome() {
+        document.getElementById('detail-org24').style.display = 'none';
+        document.getElementById('detail-caustic').style.display = 'none';
+        document.getElementById('home-view').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function startDownload(fileName, btnId) {
+        const btn = document.getElementById(btnId);
+        btn.disabled = true;
+        btn.innerText = "⏳ Generando enlace...";
+        
+        setTimeout(() => {
+            btn.innerText = "✅ ¡Enlace listo!";
+            // Aquí puedes agregar la redirección al archivo de descarga si lo deseas
+        }, 2000);
+    }
+</script>
+
+</body>
+</html>
