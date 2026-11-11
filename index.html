@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impac Gamer - Tienda de Aplicaciones APK</title>
+    <title>Impac Gamer - Tienda de Aplicaciones</title>
 
+    <!-- CAPTCHA: SE MANTIENE -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <!-- Publicidad original -->
+    <script data-cfasync="false"
+        src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca">
+    </script>
 
     <style>
         :root {
@@ -18,7 +24,6 @@
             --text-muted: #94a3b8;
             --btn-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             --btn-hover-gradient: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-            --btn-ready: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
         }
 
         * {
@@ -35,7 +40,7 @@
             padding-bottom: 50px;
         }
 
-        /* PANTALLA DE VERIFICACIÓN */
+        /* CAPTCHA - NO MODIFICADO EN SU FUNCIONAMIENTO */
         #captcha-gate {
             position: fixed;
             inset: 0;
@@ -51,7 +56,7 @@
             width: 100%;
             max-width: 380px;
             background: #161e2e;
-            border: none !important; /* Líneas del cuadro eliminadas */
+            border: none !important;
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
@@ -71,13 +76,6 @@
         .captcha-widget {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        #captcha-message {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #fca5a5;
         }
 
         header {
@@ -85,14 +83,12 @@
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid var(--accent-blue);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
         }
 
         header img {
             max-width: 240px;
             width: 100%;
             height: auto;
-            filter: drop-shadow(0 0 8px var(--accent-glow));
         }
 
         .container {
@@ -104,7 +100,6 @@
         h2.section-title {
             font-size: 22px;
             margin-bottom: 20px;
-            color: var(--text-main);
             border-left: 4px solid var(--accent-blue);
             padding-left: 10px;
         }
@@ -123,15 +118,7 @@
             align-items: center;
             gap: 20px;
             cursor: pointer;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(56, 189, 248, 0.15);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .app-list-item:hover {
-            background-color: var(--card-hover);
-            transform: translateY(-2px);
-            border-color: var(--accent-blue);
+            border: 1px solid rgba(56,189,248,.15);
         }
 
         .list-logo {
@@ -140,34 +127,28 @@
             border-radius: 14px;
             object-fit: cover;
             border: 2px solid var(--accent-blue);
-            flex-shrink: 0;
         }
 
         .list-info h3 {
             font-size: 20px;
-            color: var(--text-main);
-            margin-bottom: 4px;
         }
 
         .list-info p {
             color: var(--text-muted);
             font-size: 14px;
-            margin-bottom: 6px;
         }
 
         .stars {
             color: #f59e0b;
-            font-size: 14px;
-            letter-spacing: 2px;
         }
 
-        .app-detail {
+        .app-detail,
+        .final-view {
             display: none;
             background-color: var(--card-bg);
             border-radius: 20px;
             padding: 30px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            border: 1px solid rgba(56,189,248,.2);
         }
 
         .back-btn {
@@ -178,13 +159,6 @@
             font-weight: bold;
             cursor: pointer;
             margin-bottom: 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .back-btn:hover {
-            text-decoration: underline;
         }
 
         .detail-header {
@@ -198,33 +172,25 @@
             border-radius: 24px;
             object-fit: cover;
             border: 3px solid var(--accent-blue);
-            box-shadow: 0 0 20px var(--accent-glow);
             margin-bottom: 15px;
-        }
-
-        .detail-header h1 {
-            font-size: 26px;
-            margin-bottom: 8px;
-            color: var(--text-main);
         }
 
         .meta-badge {
             display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(56,189,248,.1);
             color: var(--accent-blue);
             padding: 6px 14px;
             border-radius: 20px;
             font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-top: 10px;
         }
 
-        .download-btn {
+        .download-btn,
+        .final-download {
             display: block;
             width: 100%;
             max-width: 360px;
-            margin: 0 auto 25px auto;
+            margin: 20px auto;
             background: var(--btn-gradient);
             color: white;
             padding: 16px 25px;
@@ -233,181 +199,80 @@
             font-weight: 700;
             font-size: 16px;
             text-align: center;
-            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            letter-spacing: 0.5px;
-        }
-
-        .download-btn:hover:not(:disabled) {
-            background: var(--btn-hover-gradient);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
+            border: none;
         }
 
         .content-section {
             margin-top: 25px;
         }
 
-        .content-section h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-            color: var(--text-main);
-            border-left: 4px solid var(--accent-blue);
-            padding-left: 10px;
-        }
-
         .app-description {
             color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 25px;
-            text-align: justify;
-        }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            background: #000;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .screenshots-grid img {
-            width: 100%;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.15);
-            transition: transform 0.2s ease;
-        }
-
-        .screenshots-grid img:hover {
-            transform: scale(1.03);
-            border-color: var(--accent-blue);
+            margin-top: 10px;
         }
 
         .ad-container {
             text-align: center;
             margin: 25px auto;
             padding: 10px;
-            background: rgba(22, 30, 46, 0.5);
+            background: rgba(22,30,46,.5);
             border-radius: 12px;
             max-width: 320px;
+            min-height: 50px;
         }
 
-        .smartlink-container {
-            text-align: center;
-            margin: 20px auto;
-        }
-
-        .smartlink-container a {
-            color: var(--accent-blue);
-        }
-
-        footer {
+        .final-message {
             text-align: center;
             color: var(--text-muted);
-            font-size: 13px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 20px;
+            margin: 15px 0;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 22px;
-            margin: 0 auto 20px;
-        }
-
-        .social-icon {
-            width: 58px;
-            height: 58px;
-            background: #000;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.12);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .social-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 0 15px var(--accent-glow);
+        .timer {
+            text-align: center;
+            font-size: 20px;
+            color: var(--accent-blue);
+            margin: 15px 0;
         }
     </style>
-
-    <!-- Popunder original -->
-    <script data-cfasync="false" src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
 </head>
 
 <body>
 
-<!-- PANTALLA DE VERIFICACIÓN -->
+<!-- CAPTCHA -->
 <div id="captcha-gate">
     <div class="captcha-box">
         <h2>🛡️ Bienvenido a ImpacWeb</h2>
         <p>Completa la verificación para entrar a nuestra página.</p>
 
         <div class="captcha-widget">
-            <!-- Se agregó el data-callback para que pase automáticamente al completarse -->
             <div class="g-recaptcha"
                  data-sitekey="6LdsjRouAAAAACiLjXP1Tysegc3ypPBy6LoQk1Xw"
                  data-callback="onCaptchaSuccess">
             </div>
         </div>
-
-        <div id="captcha-message"></div>
     </div>
 </div>
 
-<!-- TODO EL CONTENIDO DE LA PÁGINA -->
+<!-- CONTENIDO -->
 <div id="site-content" style="display:none;">
 
     <header>
-        <img src="file_00000000d7d081f5bfd9d0a5e0021d11.png" alt="Impac Gamer Logo">
+        <img src="file_00000000d7d081f5bfd9d0a5e0021d11.png"
+             alt="Impac Gamer Logo">
     </header>
 
     <div class="container">
 
-        <!-- VISTA 1: HOME -->
+        <!-- INICIO -->
         <div id="home-view">
             <h2 class="section-title">Aplicaciones Destacadas</h2>
 
             <div class="app-list">
 
                 <div class="app-list-item" onclick="showApp('org24')">
-                    <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="list-logo">
+                    <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png"
+                         class="list-logo" alt="ORG">
                     <div class="list-info">
                         <h3>ORG 2024 Premium</h3>
                         <p>Ver: 2024.1.0 • Actualizado ago 2026</p>
@@ -416,7 +281,8 @@
                 </div>
 
                 <div class="app-list-item" onclick="showApp('caustic')">
-                    <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="list-logo">
+                    <img src="file_000000000e8081f582006281a954f753.png"
+                         class="list-logo" alt="Caustic">
                     <div class="list-info">
                         <h3>Caustic 3 Piano</h3>
                         <p>Ver: 3.2.0 • Actualizado ago 2026</p>
@@ -425,138 +291,106 @@
                 </div>
 
             </div>
-
-            <!-- ANUNCIO ORIGINAL -->
-            <div class="ad-container">
-                <script type="text/javascript">
-                    atOptions = {
-                        'key': 'd50db05c9aa62c23b68a595bb110e6f2',
-                        'format': 'iframe',
-                        'height': 250,
-                        'width': 300,
-                        'params': {}
-                    };
-                </script>
-                <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
-            </div>
         </div>
 
-        <!-- VISTA 2: DETALLE ORG 2024 -->
+        <!-- DETALLE ORG -->
         <div id="detail-org24" class="app-detail">
             <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
 
             <div class="detail-header">
-                <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png" alt="ORG 2024 Logo" class="detail-logo">
+                <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png"
+                     class="detail-logo" alt="ORG">
                 <h1>ORG 2024 Premium</h1>
-                <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
+                <div class="meta-badge">Versión: 2024.1.0</div>
             </div>
 
-            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">
-                🚀 GENERAR ENLACE APK
+            <button id="btn-org24" class="download-btn"
+                    onclick="startDownload('org24','btn-org24')">
+                🚀 GENERAR ENLACE
             </button>
 
-            <div class="content-section">
-                <h3>Video Demostración</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/AQu4xNeMSxY" title="ORG 24 Video" allowfullscreen></iframe>
-                </div>
-
-                <h3>Descripción de la Aplicación</h3>
-                <p class="app-description">
-                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de ritmos con calidad de estudio.
-                </p>
-
-                <h3>Capturas de Pantalla e Interfaz</h3>
-                <div class="screenshots-grid">
-                    <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
-                    <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
-                </div>
-            </div>
+            <div class="timer" id="timer-org24"></div>
         </div>
 
-        <!-- VISTA 3: DETALLE CAUSTIC 3 -->
+        <!-- DETALLE CAUSTIC -->
         <div id="detail-caustic" class="app-detail">
             <button class="back-btn" onclick="showHome()">← Volver a aplicaciones</button>
 
             <div class="detail-header">
-                <img src="file_000000000e8081f582006281a954f753.png" alt="Caustic 3 Logo" class="detail-logo">
-                <h1>Caustic 3 Piano para Android</h1>
-                <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
+                <img src="file_000000000e8081f582006281a954f753.png"
+                     class="detail-logo" alt="Caustic">
+                <h1>Caustic 3 Piano</h1>
+                <div class="meta-badge">Versión: 3.2.0</div>
             </div>
 
-            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">
-                🚀 GENERAR ENLACE APK
+            <button id="btn-caustic" class="download-btn"
+                    onclick="startDownload('caustic','btn-caustic')">
+                🚀 GENERAR ENLACE
             </button>
 
-            <div class="content-section">
-                <h3>Video Demostración</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/OeLdRdvKLm0" title="Caustic 3 Video" allowfullscreen></iframe>
-                </div>
+            <div class="timer" id="timer-caustic"></div>
+        </div>
 
-                <h3>Descripción de la Aplicación</h3>
-                <p class="app-description">
-                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks para componer melodías y beats profesionales.
+        <!-- PÁGINA FINAL ORG -->
+        <div id="final-org24" class="final-view">
+            <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
+
+            <div class="detail-header">
+                <h1>ORG 2024</h1>
+                <p class="final-message">
+                    Revisa el contenido disponible antes de continuar.
                 </p>
-
-                <h3>Capturas de Pantalla e Interfaz</h3>
-                <div class="screenshots-grid">
-                    <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg" alt="Caustic 3 Captura 1">
-                    <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg" alt="Caustic 3 Captura 2">
-                </div>
             </div>
-        </div>
 
-    </div>
+            <!-- BLOQUE DE ANUNCIO -->
+            <div class="ad-container">
+                <script async="async" data-cfasync="false"
+                    src="https://bellnewyork.org/21/3b565a8529d684b4fccaec369c71d13c">
+                </script>
+                <div id="container-3b565a8529d684b4fccaec369c71d13c"></div>
+            </div>
 
-    <footer>
-        <!-- REDES SOCIALES -->
-        <div class="social-links">
-            <a class="social-icon" href="https://www.instagram.com/its.jezu?dlrf=MWZnYm81bGhjcXp1NA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <svg viewBox="0 0 24 24">
-                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="white" stroke-width="2"/>
-                    <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="2"/>
-                    <circle cx="17.5" cy="6.5" r="1.2"/>
-                </svg>
-            </a>
-
-            <a class="social-icon" href="https://youtube.com/@impacgamer?si=5mX_XICqvG3gQ6Wi" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                <svg viewBox="0 0 24 24">
-                    <path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8ZM9.5 15.5v-7l6 3.5-6 3.5Z"/>
-                </svg>
-            </a>
-
-            <a class="social-icon" href="https://www.tiktok.com/@kaitochivas?_r=1&_t=ZS-9BIQg7aoRkq" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <svg viewBox="0 0 24 24">
-                    <path d="M19.6 8.2a7.3 7.3 0 0 1-4.4-1.5v8.1a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.4a2.9 2.9 0 1 0 1.6 2.6V2h3.4a7.3 7.3 0 0 0 4.4 4.4v1.8Z"/>
-                </svg>
+            <!-- ENLACE FINAL: CAMBIA SOLO ESTA DIRECCIÓN -->
+            <a class="final-download"
+               href="TU_ENLACE_AUTORIZADO_AQUI"
+               target="_blank"
+               rel="noopener noreferrer">
+                📥 CONTINUAR
             </a>
         </div>
 
-        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
-    </footer>
+        <!-- PÁGINA FINAL CAUSTIC -->
+        <div id="final-caustic" class="final-view">
+            <button class="back-btn" onclick="showHome()">← Volver al inicio</button>
 
-    <!-- PUBLICIDAD ADSTERRA -->
-    <div class="ad-container">
-        <script async="async" data-cfasync="false" src="https://bellnewyork.org/21/3b565a8529d684b4fccaec369c71d13c"></script>
-        <div id="container-3b565a8529d684b4fccaec369c71d13c"></div>
+            <div class="detail-header">
+                <h1>Caustic 3 Piano</h1>
+                <p class="final-message">
+                    Revisa el contenido disponible antes de continuar.
+                </p>
+            </div>
+
+            <!-- ESPACIO PARA UN BLOQUE PUBLICITARIO -->
+            <div class="ad-container">
+                <p style="color:#94a3b8;">
+                    Espacio publicitario
+                </p>
+            </div>
+
+            <!-- ENLACE FINAL: CAMBIA SOLO ESTA DIRECCIÓN -->
+            <a class="final-download"
+               href="TU_ENLACE_AUTORIZADO_AQUI"
+               target="_blank"
+               rel="noopener noreferrer">
+                📥 CONTINUAR
+            </a>
+        </div>
+
     </div>
-
-    <!-- SMARTLINK -->
-    <div class="smartlink-container">
-        <a href="https://ardance.org/4/78a33622a225fa9aec39d6320f91b836" target="_blank" rel="nofollow sponsored noopener noreferrer">
-            Enlace publicitario
-        </a>
-    </div>
-
-    <!-- SOCIAL BAR -->
-    <script data-cfasync="false" src="https://bellnewyork.org/14/af18da111ebd1ee49a4463e035040ed1"></script>
-
 </div>
-<!-- FIN DEL CONTENIDO DE LA PÁGINA -->
 
 <script>
-    // Función que se ejecuta automáticamente al completar el reCAPTCHA
+    /* CAPTCHA: FUNCIONAMIENTO ORIGINAL */
     function onCaptchaSuccess(token) {
         if (token) {
             document.getElementById('captcha-gate').style.display = 'none';
@@ -564,38 +398,72 @@
         }
     }
 
-    function showApp(appId) {
+    function hideAllViews() {
         document.getElementById('home-view').style.display = 'none';
         document.getElementById('detail-org24').style.display = 'none';
         document.getElementById('detail-caustic').style.display = 'none';
-        
-        if(appId === 'org24') {
+        document.getElementById('final-org24').style.display = 'none';
+        document.getElementById('final-caustic').style.display = 'none';
+    }
+
+    function showApp(appId) {
+        hideAllViews();
+
+        if (appId === 'org24') {
             document.getElementById('detail-org24').style.display = 'block';
-        } else if(appId === 'caustic') {
+        }
+
+        if (appId === 'caustic') {
             document.getElementById('detail-caustic').style.display = 'block';
         }
+
         window.scrollTo(0, 0);
     }
 
     function showHome() {
-        document.getElementById('detail-org24').style.display = 'none';
-        document.getElementById('detail-caustic').style.display = 'none';
+        hideAllViews();
         document.getElementById('home-view').style.display = 'block';
         window.scrollTo(0, 0);
     }
 
-    function startDownload(fileName, btnId) {
+    function startDownload(appId, btnId) {
         const btn = document.getElementById(btnId);
+        const timer = document.getElementById('timer-' + appId);
+
         btn.disabled = true;
-        btn.innerText = "⏳ Generando enlace...";
-        
-        setTimeout(() => {
-            btn.innerText = "✅ ¡Enlace listo!";
-            // Aquí puedes agregar la redirección al archivo de descarga si lo deseas
-        }, 2000);
+        let seconds = 10;
+
+        btn.innerText = '⏳ Espera...';
+        timer.innerText = 'Generando enlace: ' + seconds + ' segundos';
+
+        const countdown = setInterval(function() {
+            seconds--;
+
+            if (seconds > 0) {
+                timer.innerText =
+                    'Generando enlace: ' + seconds + ' segundos';
+            } else {
+                clearInterval(countdown);
+                timer.innerText = '';
+                btn.innerText = '✅ ¡Listo!';
+
+                setTimeout(function() {
+                    hideAllViews();
+
+                    if (appId === 'org24') {
+                        document.getElementById('final-org24').style.display = 'block';
+                    }
+
+                    if (appId === 'caustic') {
+                        document.getElementById('final-caustic').style.display = 'block';
+                    }
+
+                    window.scrollTo(0, 0);
+                }, 500);
+            }
+        }, 1000);
     }
 </script>
 
 </body>
-    </html>
-    
+</html>
