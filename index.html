@@ -64,13 +64,6 @@
         .captcha-widget {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        #captcha-message {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #fca5a5;
         }
 
         header {
@@ -137,12 +130,7 @@
 
         .list-info h3 { font-size: 20px; margin-bottom: 4px; }
         .list-info p { color: var(--text-muted); font-size: 14px; }
-
-        .stars {
-            color: #f59e0b;
-            font-size: 16px;
-            letter-spacing: 2px;
-        }
+        .stars { color: #f59e0b; letter-spacing: 2px; }
 
         .app-detail {
             display: none;
@@ -217,7 +205,7 @@
 
         .content-section h3 {
             font-size: 18px;
-            margin-bottom: 12px;
+            margin: 22px 0 12px;
             border-left: 4px solid var(--accent-blue);
             padding-left: 10px;
         }
@@ -257,31 +245,30 @@
 
         .screenshots-grid img {
             width: 100%;
-            height: 110px;
+            height: 140px;
             object-fit: cover;
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,.15);
         }
 
-        /* SECCIÓN DE RESEÑAS */
+        /* RESEÑAS */
         .reviews-section {
-            margin-top: 35px;
-            padding: 20px;
-            background: #101827;
-            border: 1px solid rgba(56,189,248,.2);
-            border-radius: 16px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,.12);
         }
 
         .reviews-section h3 {
+            font-size: 20px;
             border-left: 4px solid var(--accent-blue);
             padding-left: 10px;
             margin-bottom: 15px;
         }
 
         .rating-summary {
-            background: #161e2e;
-            padding: 15px;
+            background: #0f1726;
             border-radius: 12px;
+            padding: 15px;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -289,31 +276,33 @@
         .average-rating {
             font-size: 30px;
             font-weight: bold;
-            color: #fbbf24;
+            color: #f59e0b;
         }
 
-        .rating-summary p {
+        .rating-count {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .review-form {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
+            background: #0f1726;
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 22px;
         }
 
         .review-form input,
-        .review-form textarea,
-        .review-form select {
+        .review-form select,
+        .review-form textarea {
+            display: block;
             width: 100%;
+            margin-bottom: 12px;
             padding: 13px;
-            border-radius: 10px;
+            border-radius: 9px;
             border: 1px solid #334155;
             background: #161e2e;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
         }
 
@@ -322,44 +311,33 @@
             resize: vertical;
         }
 
-        .review-form input:focus,
-        .review-form textarea:focus,
-        .review-form select:focus {
-            border-color: var(--accent-blue);
-        }
-
-        .review-submit {
-            padding: 14px;
-            background: linear-gradient(135deg,#0284c7,#2563eb);
+        .review-form button {
+            width: 100%;
+            padding: 13px;
+            background: var(--btn-gradient);
             color: white;
             border: none;
-            border-radius: 10px;
+            border-radius: 25px;
             font-size: 15px;
             font-weight: bold;
             cursor: pointer;
         }
 
-        .review-submit:disabled {
-            opacity: .6;
-            cursor: not-allowed;
-        }
+        .review-form button:disabled { opacity: .6; }
 
-        .review-message {
-            font-size: 14px;
+        .review-status {
             color: var(--text-muted);
+            font-size: 13px;
+            margin-top: 10px;
+            text-align: center;
         }
 
-        .review-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .review-item {
-            background: #161e2e;
-            padding: 15px;
+        .review-card {
+            background: #0f1726;
+            border: 1px solid rgba(56,189,248,.13);
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,.07);
+            padding: 15px;
+            margin-bottom: 12px;
         }
 
         .review-top {
@@ -371,10 +349,19 @@
         }
 
         .review-name { font-weight: bold; }
-        .review-stars { color: #fbbf24; letter-spacing: 2px; }
-        .review-comment {
+        .review-stars { color: #f59e0b; letter-spacing: 1px; }
+        .review-date { color: var(--text-muted); font-size: 12px; }
+        .review-message {
             color: #cbd5e1;
+            white-space: pre-wrap;
             overflow-wrap: anywhere;
+        }
+
+        .no-reviews {
+            color: var(--text-muted);
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
         }
 
         .ad-container {
@@ -422,18 +409,17 @@
             border: 1px solid rgba(255,255,255,.12);
         }
 
-        .social-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: white;
-        }
+        .social-icon svg { width: 32px; height: 32px; fill: white; }
     </style>
 
-    <script data-cfasync="false" src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
+    <!-- Publicidad original -->
+    <script data-cfasync="false"
+        src="https://accountut.com/1/ca2f36ad9f1e2760933fa94b87082aca"></script>
 </head>
 
 <body>
 
+<!-- VERIFICACIÓN CAPTCHA -->
 <div id="captcha-gate">
     <div class="captcha-box">
         <h2>🛡️ Bienvenido a ImpacWeb</h2>
@@ -441,8 +427,8 @@
 
         <div class="captcha-widget">
             <div class="g-recaptcha"
-                 data-sitekey="6LdsjRouAAAAACiLjXP1Tysegc3ypPBy6LoQk1Xw"
-                 data-callback="onCaptchaSuccess">
+                data-sitekey="6LdsjRouAAAAACiLjXP1Tysegc3ypPBy6LoQk1Xw"
+                data-callback="onCaptchaSuccess">
             </div>
         </div>
 
@@ -450,14 +436,17 @@
     </div>
 </div>
 
+<!-- CONTENIDO DE LA PÁGINA -->
 <div id="site-content" style="display:none;">
 
     <header>
-        <img src="file_00000000d7d081f5bfd9d0a5e0021d11.png" alt="Impac Gamer Logo">
+        <img src="file_00000000d7d081f5bfd9d0a5e0021d11.png"
+             alt="Impac Gamer Logo">
     </header>
 
     <div class="container">
 
+        <!-- INICIO -->
         <div id="home-view">
             <h2 class="section-title">Aplicaciones Destacadas</h2>
 
@@ -469,8 +458,7 @@
                     <div class="list-info">
                         <h3>ORG 2024 Premium</h3>
                         <p>Ver: 2024.1.0 • Actualizado ago 2026</p>
-                        <div class="stars" id="home-org24-rating">☆☆☆☆☆</div>
-                        <p id="home-org24-count">Cargando reseñas...</p>
+                        <div class="stars">★★★★★</div>
                     </div>
                 </div>
 
@@ -480,15 +468,15 @@
                     <div class="list-info">
                         <h3>Caustic 3 Piano</h3>
                         <p>Ver: 3.2.0 • Actualizado ago 2026</p>
-                        <div class="stars" id="home-caustic-rating">☆☆☆☆☆</div>
-                        <p id="home-caustic-count">Cargando reseñas...</p>
+                        <div class="stars">★★★★★</div>
                     </div>
                 </div>
 
             </div>
 
+            <!-- ANUNCIO ORIGINAL -->
             <div class="ad-container">
-                <script type="text/javascript">
+                <script>
                     atOptions = {
                         'key': 'd50db05c9aa62c23b68a595bb110e6f2',
                         'format': 'iframe',
@@ -497,7 +485,7 @@
                         'params': {}
                     };
                 </script>
-                <script type="text/javascript" src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
+                <script src="https://bellnewyork.org/22/d50db05c9aa62c23b68a595bb110e6f2"></script>
             </div>
         </div>
 
@@ -509,7 +497,9 @@
                 <img src="file_00000000d25081f5b9a13a3a9e06e0f3.png"
                      alt="ORG 2024 Logo" class="detail-logo">
                 <h1>ORG 2024 Premium</h1>
-                <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
+                <div class="meta-badge">
+                    Versión: 2024.1.0 (Desbloqueada) • Música y Audio
+                </div>
             </div>
 
             <button id="btn-org24" class="download-btn"
@@ -518,58 +508,75 @@
             </button>
 
             <div class="content-section">
+
                 <h3>Video Demostración</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/AQu4xNeMSxY"
                         title="ORG 24 Video" allowfullscreen></iframe>
                 </div>
 
+                <!-- PRIMERO LAS IMÁGENES -->
+                <h3>Capturas de Pantalla e Interfaz</h3>
+                <div class="screenshots-grid">
+                    <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg"
+                         alt="ORG 24 Captura 1">
+                    <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg"
+                         alt="ORG 24 Captura 2">
+                </div>
+
+                <!-- DESPUÉS LA DESCRIPCIÓN -->
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
                     ¡Bienvenido al siguiente nivel de la producción musical móvil!
-                    <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el
-                    sello exclusivo de <em>Impac Gamer</em>) te da el poder sobre una
-                    colección de ritmos con calidad de estudio.
+                    <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo
+                    el sello exclusivo de <em>Impac Gamer</em>) te da el poder
+                    absoluto sobre una colección de ritmos con calidad de estudio.
                 </p>
 
-                <h3>Capturas de Pantalla e Interfaz</h3>
-                <div class="screenshots-grid">
-                    <img src="IMG_e041e204-78e8-4f8e-9524-851ce3de294e.jpg" alt="ORG 24 Captura 1">
-                    <img src="2928206897cffef391962b182426f8f95bf9288d8454e085d78aa763bbdc2879_300.jpeg" alt="ORG 24 Captura 2">
+                <!-- RESEÑAS ORG -->
+                <div class="reviews-section">
+                    <h3>⭐ Reseñas y comentarios</h3>
+
+                    <div class="rating-summary">
+                        <div class="average-rating" id="average-org24">—</div>
+                        <div class="rating-count" id="count-org24">
+                            Cargando calificaciones...
+                        </div>
+                    </div>
+
+                    <form class="review-form"
+                        onsubmit="submitReview(event,'org24')">
+
+                        <input id="name-org24" type="text"
+                            maxlength="30"
+                            placeholder="Tu nombre (opcional)">
+
+                        <select id="rating-org24" required>
+                            <option value="">Selecciona tu calificación</option>
+                            <option value="5">★★★★★ - Excelente</option>
+                            <option value="4">★★★★☆ - Muy bueno</option>
+                            <option value="3">★★★☆☆ - Bueno</option>
+                            <option value="2">★★☆☆☆ - Regular</option>
+                            <option value="1">★☆☆☆☆ - Malo</option>
+                        </select>
+
+                        <textarea id="message-org24"
+                            minlength="3" maxlength="500"
+                            placeholder="Escribe tu comentario..."
+                            required></textarea>
+
+                        <button type="submit" id="submit-org24">
+                            Publicar reseña
+                        </button>
+
+                        <div class="review-status" id="status-org24"></div>
+                    </form>
+
+                    <div id="reviews-org24">
+                        <div class="no-reviews">Cargando reseñas...</div>
+                    </div>
                 </div>
             </div>
-
-            <section class="reviews-section" id="reviews-org24">
-                <h3>⭐ Reseñas de ORG 2024</h3>
-                <div class="rating-summary">
-                    <div class="average-rating" id="avg-org24">0.0 ★</div>
-                    <p id="count-org24">Cargando reseñas...</p>
-                </div>
-
-                <form class="review-form" onsubmit="submitReview(event,'org24')">
-                    <input id="name-org24" type="text" maxlength="30"
-                        placeholder="Tu nombre (opcional)">
-                    <select id="rating-org24" required>
-                        <option value="">Selecciona tu calificación</option>
-                        <option value="5">★★★★★ - Excelente</option>
-                        <option value="4">★★★★☆ - Muy bueno</option>
-                        <option value="3">★★★☆☆ - Bueno</option>
-                        <option value="2">★★☆☆☆ - Regular</option>
-                        <option value="1">★☆☆☆☆ - Malo</option>
-                    </select>
-                    <textarea id="comment-org24" maxlength="500"
-                        placeholder="Escribe tu opinión sobre ORG 2024..." required></textarea>
-                    <button class="review-submit" id="submit-org24" type="submit">
-                        Publicar reseña
-                    </button>
-                    <p class="review-message" id="message-org24"></p>
-                </form>
-
-                <h3>Opiniones de los usuarios</h3>
-                <div class="review-list" id="list-org24">
-                    <p class="review-message">Cargando comentarios...</p>
-                </div>
-            </section>
         </div>
 
         <!-- CAUSTIC 3 -->
@@ -580,7 +587,9 @@
                 <img src="file_000000000e8081f582006281a954f753.png"
                      alt="Caustic 3 Logo" class="detail-logo">
                 <h1>Caustic 3 Piano para Android</h1>
-                <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
+                <div class="meta-badge">
+                    Versión: 3.2.0 • Música y Audio
+                </div>
             </div>
 
             <button id="btn-caustic" class="download-btn"
@@ -589,41 +598,46 @@
             </button>
 
             <div class="content-section">
+
                 <h3>Video Demostración</h3>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/OeLdRdvKLm0"
                         title="Caustic 3 Video" allowfullscreen></iframe>
                 </div>
 
-                <h3>Descripción de la Aplicación</h3>
-                <p class="app-description">
-                    Caustic 3 es una potente herramienta de creación musical inspirada
-                    en equipos de síntesis basados en racks para componer melodías y beats.
-                </p>
-
+                <!-- PRIMERO LAS IMÁGENES -->
                 <h3>Capturas de Pantalla e Interfaz</h3>
                 <div class="screenshots-grid">
-                    <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg" alt="Caustic 3 Captura 1">
-                    <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg" alt="Caustic 3 Captura 2">
-                </div>
-            </div>
-
-            <section class="reviews-section" id="reviews-caustic">
-                <h3>⭐ Reseñas de Caustic 3</h3>
-                <div class="rating-summary">
-                    <div class="average-rating" id="avg-caustic">0.0 ★</div>
-                    <p id="count-caustic">Cargando reseñas...</p>
+                    <img src="IMG_a465c832-4edd-48f9-aefc-a725c6bc6a6c.jpg"
+                         alt="Caustic 3 Captura 1">
+                    <img src="IMG_4269e976-1ee8-4a28-b274-e2dc6a9c48b6.jpg"
+                         alt="Caustic 3 Captura 2">
                 </div>
 
-                <form class="review-form" onsubmit="submitReview(event,'caustic')">
-                    <input id="name-caustic" type="text" maxlength="30"
-                        placeholder="Tu nombre (opcional)">
-                    <select id="rating-caustic" required>
-                        <option value="">Selecciona tu calificación</option>
-                        <option value="5">★★★★★ - Excelente</option>
-                        <option value="4">★★★★☆ - Muy bueno</option>
-                        <option value="3">★★★☆☆ - Bueno</option>
-                        <option value="2">★★☆☆☆ - Regular</option>
-                        <option value="1">★☆☆☆☆ - Malo</option>
-                    </select>
-                    <textarea id=
+                <!-- DESPUÉS LA DESCRIPCIÓN -->
+                <h3>Descripción de la Aplicación</h3>
+                <p class="app-description">
+                    Caustic 3 es una potente herramienta de creación musical
+                    inspirada en equipos de síntesis basados en racks para
+                    componer melodías y beats.
+                </p>
+
+                <!-- RESEÑAS CAUSTIC -->
+                <div class="reviews-section">
+                    <h3>⭐ Reseñas y comentarios</h3>
+
+                    <div class="rating-summary">
+                        <div class="average-rating" id="average-caustic">—</div>
+                        <div class="rating-count" id="count-caustic">
+                            Cargando calificaciones...
+                        </div>
+                    </div>
+
+                    <form class="review-form"
+                        onsubmit="submitReview(event,'caustic')">
+
+                        <input id="name-caustic" type="text"
+                            maxlength="30"
+                            placeholder="Tu nombre (opcional)">
+
+                        
