@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +18,7 @@
             --text-muted: #94a3b8;
             --btn-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
             --btn-hover-gradient: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+            --btn-ready: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
         }
 
         * {
@@ -35,82 +35,13 @@
             padding-bottom: 50px;
         }
 
-        /* PANTALLA DE ESTRENO */
-        #launch-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 1000000;
-            background: radial-gradient(circle at top, #172b46, #080d18 70%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .launch-box {
-            width: 100%;
-            max-width: 420px;
-            padding: 30px 20px;
-            background: rgba(22, 30, 46, 0.95);
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            border-radius: 22px;
-            box-shadow: 0 0 35px rgba(56, 189, 248, 0.15);
-        }
-
-        .launch-box h1 {
-            color: #38bdf8;
-            font-size: 30px;
-            margin-bottom: 12px;
-            letter-spacing: 2px;
-        }
-
-        .launch-box p {
-            color: #cbd5e1;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .countdown {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin: 25px 0;
-        }
-
-        .countdown-item {
-            background: #0b1424;
-            border: 1px solid rgba(56,189,248,.3);
-            border-radius: 12px;
-            padding: 14px 4px;
-        }
-
-        .countdown-item span {
-            display: block;
-            font-size: 27px;
-            font-weight: bold;
-            color: #38bdf8;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .countdown-item small {
-            color: #94a3b8;
-            font-size: 10px;
-        }
-
-        .launch-date {
-            color: #38bdf8 !important;
-            font-weight: bold;
-            margin-bottom: 0 !important;
-        }
-
-        /* CAPTCHA */
+        /* PANTALLA DE VERIFICACIÓN */
         #captcha-gate {
             position: fixed;
             inset: 0;
             z-index: 999999;
             background: #0b0f19;
-            display: none;
+            display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
@@ -120,7 +51,7 @@
             width: 100%;
             max-width: 380px;
             background: #161e2e;
-            border: none !important;
+            border: none !important; /* Líneas del cuadro eliminadas */
             border-radius: 20px;
             padding: 30px 20px;
             text-align: center;
@@ -309,7 +240,7 @@
             letter-spacing: 0.5px;
         }
 
-        .download-btn:hover {
+        .download-btn:hover:not(:disabled) {
             background: var(--btn-hover-gradient);
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(34, 197, 94, 0.5);
@@ -442,46 +373,6 @@
 
 <body>
 
-<!-- PANTALLA DE ESTRENO -->
-<div id="launch-screen">
-    <div class="launch-box">
-        <h1>PRÓXIMAMENTE</h1>
-
-        <p>
-            Nuestra página estará disponible muy pronto.
-            ¡Prepárate para conocer Impac Gamer!
-        </p>
-
-        <div class="countdown">
-            <div class="countdown-item">
-                <span id="days">00</span>
-                <small>DÍAS</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="hours">00</span>
-                <small>HORAS</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="minutes">00</span>
-                <small>MINUTOS</small>
-            </div>
-
-            <div class="countdown-item">
-                <span id="seconds">00</span>
-                <small>SEGUNDOS</small>
-            </div>
-        </div>
-
-        <p class="launch-date">
-            Estreno: Sábado 21 de noviembre
-            <br>
-            9:00 PM
-        </p>
-    </div>
-</div>
-
 <!-- PANTALLA DE VERIFICACIÓN -->
 <div id="captcha-gate">
     <div class="captcha-box">
@@ -489,6 +380,7 @@
         <p>Completa la verificación para entrar a nuestra página.</p>
 
         <div class="captcha-widget">
+            <!-- Se agregó el data-callback para que pase automáticamente al completarse -->
             <div class="g-recaptcha"
                  data-sitekey="6LdsjRouAAAAACiLjXP1Tysegc3ypPBy6LoQk1Xw"
                  data-callback="onCaptchaSuccess">
@@ -559,8 +451,7 @@
                 <div class="meta-badge">Versión: 2024.1.0 (Desbloqueada) • Música y Audio</div>
             </div>
 
-            <button id="btn-org24" class="download-btn"
-                onclick="startDownload('https://www.mediafire.com/file/xoffc582i223q24/ORG_24_ImPacGG-1.apk/file')">
+            <button id="btn-org24" class="download-btn" onclick="startDownload('ORG 24 ImPacGG-1.apk', 'btn-org24')">
                 🚀 GENERAR ENLACE APK
             </button>
 
@@ -572,10 +463,7 @@
 
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
-                    ¡Bienvenido al siguiente nivel de la producción musical móvil!
-                    <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo
-                    el sello exclusivo de <em>Impac Gamer</em>) te da el poder
-                    absoluto sobre una colección infinita de ritmos con calidad de estudio.
+                    ¡Bienvenido al siguiente nivel de la producción musical móvil! <strong>ORG 2024 Premium</strong> (modificada y optimizada bajo el sello exclusivo de <em>Impac Gamer</em>) te da el poder absoluto sobre una colección infinita de ritmos con calidad de estudio.
                 </p>
 
                 <h3>Capturas de Pantalla e Interfaz</h3>
@@ -596,8 +484,7 @@
                 <div class="meta-badge">Versión: 3.2.0 • Música y Audio</div>
             </div>
 
-            <button id="btn-caustic" class="download-btn"
-                onclick="startDownload('https://www.mediafire.com/file/a06xfs8mbi25cqy/com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk/file')">
+            <button id="btn-caustic" class="download-btn" onclick="startDownload('com-singlecellsoftware-caustic-19-20368330-94affb242703a418a7dbd02f03e05c83.apk', 'btn-caustic')">
                 🚀 GENERAR ENLACE APK
             </button>
 
@@ -609,8 +496,7 @@
 
                 <h3>Descripción de la Aplicación</h3>
                 <p class="app-description">
-                    Caustic 3 es una potente herramienta de creación musical inspirada
-                    en equipos de síntesis basados en racks para componer melodías y beats profesionales.
+                    Caustic 3 es una potente herramienta de creación musical inspirada en equipos de síntesis basados en racks para componer melodías y beats profesionales.
                 </p>
 
                 <h3>Capturas de Pantalla e Interfaz</h3>
@@ -624,8 +510,8 @@
     </div>
 
     <footer>
+        <!-- REDES SOCIALES -->
         <div class="social-links">
-
             <a class="social-icon" href="https://www.instagram.com/its.jezu?dlrf=MWZnYm81bGhjcXp1NA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <svg viewBox="0 0 24 24">
                     <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="white" stroke-width="2"/>
@@ -641,4 +527,75 @@
             </a>
 
             <a class="social-icon" href="https://www.tiktok.com/@kaitochivas?_r=1&_t=ZS-9BIQg7aoRkq" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                <svg vi
+                <svg viewBox="0 0 24 24">
+                    <path d="M19.6 8.2a7.3 7.3 0 0 1-4.4-1.5v8.1a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.4a2.9 2.9 0 1 0 1.6 2.6V2h3.4a7.3 7.3 0 0 0 4.4 4.4v1.8Z"/>
+                </svg>
+            </a>
+        </div>
+
+        <p>&copy; 2026 Impac Gamer. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- PUBLICIDAD ADSTERRA -->
+    <div class="ad-container">
+        <script async="async" data-cfasync="false" src="https://bellnewyork.org/21/3b565a8529d684b4fccaec369c71d13c"></script>
+        <div id="container-3b565a8529d684b4fccaec369c71d13c"></div>
+    </div>
+
+    <!-- SMARTLINK -->
+    <div class="smartlink-container">
+        <a href="https://ardance.org/4/78a33622a225fa9aec39d6320f91b836" target="_blank" rel="nofollow sponsored noopener noreferrer">
+            Enlace publicitario
+        </a>
+    </div>
+
+    <!-- SOCIAL BAR -->
+    <script data-cfasync="false" src="https://bellnewyork.org/14/af18da111ebd1ee49a4463e035040ed1"></script>
+
+</div>
+<!-- FIN DEL CONTENIDO DE LA PÁGINA -->
+
+<script>
+    // Función que se ejecuta automáticamente al completar el reCAPTCHA
+    function onCaptchaSuccess(token) {
+        if (token) {
+            document.getElementById('captcha-gate').style.display = 'none';
+            document.getElementById('site-content').style.display = 'block';
+        }
+    }
+
+    function showApp(appId) {
+        document.getElementById('home-view').style.display = 'none';
+        document.getElementById('detail-org24').style.display = 'none';
+        document.getElementById('detail-caustic').style.display = 'none';
+        
+        if(appId === 'org24') {
+            document.getElementById('detail-org24').style.display = 'block';
+        } else if(appId === 'caustic') {
+            document.getElementById('detail-caustic').style.display = 'block';
+        }
+        window.scrollTo(0, 0);
+    }
+
+    function showHome() {
+        document.getElementById('detail-org24').style.display = 'none';
+        document.getElementById('detail-caustic').style.display = 'none';
+        document.getElementById('home-view').style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+
+    function startDownload(fileName, btnId) {
+        const btn = document.getElementById(btnId);
+        btn.disabled = true;
+        btn.innerText = "⏳ Generando enlace...";
+        
+        setTimeout(() => {
+            btn.innerText = "✅ ¡Enlace listo!";
+            // Aquí puedes agregar la redirección al archivo de descarga si lo deseas
+        }, 2000);
+    }
+</script>
+
+</body>
+    </html>
+    
